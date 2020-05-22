@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>嘉怡我爱你</title>
+    <link href="etc/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/main.css">
+    <!--我们相爱了-->
+    <style>
+        .momv {
+            text-align: center;
+        }
+
+        .momv img {
+            width: 50px;
+            height: 50px;
+            vertical-align: -20px;
+            border-radius: 50%;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            border: 2px solid #fff;
+            display: inline-block;
+        }
+
+        .momo {
+            color: red;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            display: inline-block;
+            text-decoration: inherit;
+            width: 1em;
+            margin-right: .2em;
+            text-align: center;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1em;
+            margin-left: .2em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-animation: xintiao 1.33s ease-in-out infinite;
+            animation: xintiao 1.33s ease-in-out infinite
+        }
+
+        @-webkit-keyframes xintiao {
+            0% {
+                -webkit-transform: scale(1)
+            }
+
+            50% {
+                -webkit-transform: scale(.8)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes xintiao {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+
+            50% {
+                -webkit-transform: scale(.8);
+                transform: scale(.8)
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+    </style>
+    <!--我们相爱了-->
+</head>
+
+<body onselectstart="return false" class="is-loading">
+    <div id="wrapper">
+        <section id="main">
+            <span class="avatar">
+                <img src="images/log.png" alt></span>
+            <h1>嘉怡我爱你</h1>
+            <p>你的过去我没来得及参与，但是你的未来我一定至死不渝。</p>
+            <form name="form1">
+                <!--我们相爱了-->
+                <div class="momv">
+                    <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=755733708&spec=100">
+                    <i class="momo">❤</i>
+                    <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=1020996503&spec=100">
+                    <br>
+                    <span id="momk"></span>
+                    <span id="momk" style="color: #ff0000;"></span>
+                    <script type="text/javascript">
+                        function NewDate(str) {
+                            str = str.split('-');
+                            var date = new Date();
+                            date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+                            date.setUTCHours(0, 0, 0, 0);
+                            return date;
+                        }
+
+                        function momxc() {
+                            var birthDay = NewDate("2020-2-14");
+                            var today = new Date();
+                            var timeold = today.getTime() - birthDay.getTime();
+                            var sectimeold = timeold / 1000
+                            var secondsold = Math.floor(sectimeold);
+                            var msPerDay = 24 * 60 * 60 * 1000;
+                            var e_daysold = timeold / msPerDay;
+                            var daysold = Math.floor(e_daysold);
+                            var e_hrsold = (daysold - e_daysold) * -24;
+                            var hrsold = Math.floor(e_hrsold);
+                            var e_minsold = (hrsold - e_hrsold) * -60;
+                            var minsold = Math.floor((hrsold - e_hrsold) * -60);
+                            var seconds = Math.floor((minsold - e_minsold) * -60).toString();
+                            document.getElementById("momk").innerHTML = "我们相爱了" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+                            setTimeout(momxc, 1000);
+                        }
+                        momxc();
+                    </script>
+                </div>
+            </form>
+        </section>
+        <footer id="footer">
+            <a href>&copy;润东小站</a>.版权所有
+        </footer>
+
+    </div>
+    <div class="meiha"></div>
+    <!-- 配套样式，可以替换其中的图片地址 -->
+    <style>
+        /** 梅花枝 **/
+        .meiha {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            width: 350px;
+            /** PNG图宽度 **/
+            height: 231px;
+            /** PNG图高度 **/
+            pointer-events: none;
+            background: url('images/1kBpid.png');
+        }
+    </style>
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function() {
+                document.body.className = document.body.className.replace(/\bis-loading\b/, '')
+            });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '')
+        }
+    </script>
+    <script src="js/mom.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/snowfall.js"></script>
+</body>
+
+</html>
